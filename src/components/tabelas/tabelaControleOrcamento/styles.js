@@ -20,7 +20,7 @@ export const CabecalhoCelula = styled.th`
   padding: 10px;
   text-align: center;
   font-size: 12px;
-  color: ${colors.third};
+  color: ${colors.primary};
   font-weight: 600;
   height: 2.55vh;
   ${(props) => props.width && `width: ${props.width};`}

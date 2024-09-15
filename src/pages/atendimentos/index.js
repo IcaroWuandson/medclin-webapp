@@ -19,6 +19,7 @@ import {
 } from "./styles";
 import TabelaAtendimentos from "../../components/tabelas/tabelaAtendimentos";
 import { supabase } from "../../services/supabase";
+import Header from "../../components/header";
 
 const Atendimentos = () => {
   const [currentDate, setCurrentDate] = useState("");
@@ -189,46 +190,15 @@ const Atendimentos = () => {
   console.log("Data no formato ISO:", isoString);
 
   return (
-    <Container>
-      <Sidebar />
-      <ContentWrapper>
-        <DivInfos>
-          <Text>Olá, {tratamento}</Text>
-          <TextData>{currentDate}</TextData>
-        </DivInfos>
-
-        <DivButtonControls>
-          <DivInfosPatietes>
-            <TextDataPatietes>
-              {agendamentosHoje} pacientes para hoje
-            </TextDataPatietes>
-          </DivInfosPatietes>
-
-          <DivSearch>
-            <Input
-              type="text"
-              value={texto}
-              onChange={(e) => setTexto(e.target.value)}
-              placeholder="O que você procura?"
-            />
-
-            <SwitchContainer>
-              <SwitchInput
-                type="checkbox"
-                checked={isChecked}
-                onChange={handleToggle}
-              />
-              <SwitchSlider isChecked={isChecked}>
-                <SliderCircle isChecked={isChecked} />
-              </SwitchSlider>
-            </SwitchContainer>
-          </DivSearch>
-        </DivButtonControls>
-        <DivLine>
+    <>
+      <Header />
+      <Container>
+        <Sidebar />
+        <ContentWrapper>
           <TabelaAtendimentos dados={dadosFiltrados} />
-        </DivLine>
-      </ContentWrapper>
-    </Container>
+        </ContentWrapper>
+      </Container>
+    </>
   );
 };
 

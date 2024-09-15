@@ -18,11 +18,11 @@ const Sidebar = () => {
     } else if (cardNumber === 2) {
       navigate(`/plataforma/atendimentos`);
     } else if (cardNumber === 3) {
-      navigate(`/plataforma/pacientes`);
+      navigate(`/plataforma/cadastros`);
     } else if (cardNumber === 4) {
       navigate(`/plataforma/financeiro`);
     } else if (cardNumber === 5) {
-      navigate(`/plataforma/configurações`);
+      navigate(`/plataforma/estoque`);
     }
   };
 

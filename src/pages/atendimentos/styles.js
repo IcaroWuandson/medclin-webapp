@@ -4,13 +4,16 @@ import { colors } from "../../theme";
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: row;
+  height: 100vh;
+  padding-top: 10vh;
 `;
 
 export const ContentWrapper = styled.div`
   flex: 1;
   padding: 20px;
+  margin-left: 11.05vw;
   position: absolute;
-  margin-left: 12.05vw;
 `;
 
 export const DivInfos = styled.div`

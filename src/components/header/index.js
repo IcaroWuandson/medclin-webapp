@@ -97,7 +97,9 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <WelcomeImage src={logo} alt="sias3" />
+      <a href="/plataforma/">
+        <WelcomeImage src={logo} alt="logo" />
+      </a>
 
       <DivButtons>
         <Button onClick={handleProfileClick}>

@@ -3,6 +3,9 @@ import { colors } from "../../theme";
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: row;
+  height: 100vh;
+  padding-top: 10vh;
 `;
 
 export const ContentWrapper = styled.div`
@@ -11,7 +14,6 @@ export const ContentWrapper = styled.div`
   margin-left: 11.05vw;
   position: absolute;
 `;
-
 export const DivTable = styled.div`
   margin-top: 20px;
   border: 1px solid;
@@ -21,9 +23,9 @@ export const DivTable = styled.div`
 export const CustomP = styled.p`
   font-size: 1.4rem;
   font-weight: 400;
-  color: ${colors.third};
-  border-bottom: 1px solid ${colors.third};
-  margin-top: 10vh;
+  color: ${colors.primary};
+  border-bottom: 1px solid ${colors.primary};
+ 
 `;
 
 export const DivFlex = styled.div`

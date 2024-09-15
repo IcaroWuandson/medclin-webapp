@@ -5,6 +5,9 @@ import { colors } from "../../theme";
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: row;
+  height: 100vh;
+  padding-top: 10vh;
 `;
 
 export const ContentWrapper = styled.div`
@@ -28,7 +31,7 @@ export const CustomTab = styled(Tab)`
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: ${colors.third};
+    background-color: ${colors.primary};
     transform: scaleX(0);
     transition: transform 0.3s ease-in-out;
   }
@@ -47,7 +50,7 @@ export const TextTab = styled.p`
   font-size: 16px;
   margin-left: 10px;
   &:hover {
-    color: ${colors.third};
+    color: ${colors.primary};
   }
 `;
 
@@ -64,7 +67,7 @@ export const DivButtons = styled.div`
 `;
 
 export const ButtonSave = styled.button`
-  background-color: ${colors.third};
+  background-color: ${colors.primary};
   color: ${colors.white};
   border-radius: 5px;
   border: none;

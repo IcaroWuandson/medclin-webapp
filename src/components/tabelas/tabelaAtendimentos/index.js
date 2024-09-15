@@ -119,18 +119,11 @@ const TabelaAtendimentos = ({ dados }) => {
       <Cabecalho>
         <Linha>
           <CabecalhoCelula width="5%">Horário</CabecalhoCelula>
-          {dados.every((item) => item.status !== "cancelado") && (
-            <>
-              <CabecalhoCelula width="5%">Chegada</CabecalhoCelula>
-              <CabecalhoCelula width="8%">Espera</CabecalhoCelula>
-            </>
-          )}
-          <CabecalhoCelula width="8%">Status</CabecalhoCelula>
-          <CabecalhoCelula width="10%">Paciente</CabecalhoCelula>
+
+          <CabecalhoCelula width="20%">Paciente</CabecalhoCelula>
           <CabecalhoCelula width="10%">Idade</CabecalhoCelula>
-          <CabecalhoCelula width="10%">Procedimento</CabecalhoCelula>
-          <CabecalhoCelula width="5%">Sala</CabecalhoCelula>
-          <CabecalhoCelula width="6%"></CabecalhoCelula>
+          <CabecalhoCelula width="20%">Procedimento</CabecalhoCelula>
+
           <CabecalhoCelula width="10%"></CabecalhoCelula>
         </Linha>
       </Cabecalho>
@@ -143,69 +136,20 @@ const TabelaAtendimentos = ({ dados }) => {
 
           return (
             <Linha key={index}>
-              <Celula width="5%">{item.horaInicial}</Celula>
-              {item.status !== "cancelado" && (
-                <>
-                  {item.status === "Esperando" ? (
-                    <Celula width="5%">{item.chegada}</Celula>
-                  ) : (
-                    <Celula width="5%">---</Celula>
-                  )}
-
-                  {item.status === "Esperando" ? (
-                    <Celula width="8%">{temposEspera[index]}</Celula>
-                  ) : (
-                    <Celula width="8%">---</Celula>
-                  )}
-                </>
-              )}
-              {item.status ? (
-                <Celula width="8%">{item.status}</Celula>
-              ) : (
-                <Celula width="8%">---</Celula>
-              )}
-
-              <Celula width="10%">{item.nomePaciente}</Celula>
+              <Celula width="20%">{item.nomePaciente}</Celula>
               <Celula width="10%">{idade}</Celula>
-              <Celula width="10%">
+              <Celula width="20%">
                 {agendamentoInfo.agendamento
                   ? agendamentoInfo.agendamento
                   : "---"}
               </Celula>
-              <Celula width="5%">
-                {agendamentoInfo.sala ? agendamentoInfo.sala : "---"}
-              </Celula>
+
               <Celula width="6%">
                 <ButtonAtender
                   onClick={() => handleNavigateToProntuario(item, dados)}
                 >
                   Atender
                 </ButtonAtender>
-              </Celula>
-              <Celula width="10%">
-                <MenuSuspenso>
-                  <List size={14} onClick={() => toggleMenu(index)} />
-                  {linhaSelecionada === index && (
-                    <MenuOpcoes aberto={menuAberto}>
-                      <OpcaoMenu onClick={fecharMenu}>
-                        <WhatsappLogo size={16} />
-                        <TextMenu>Abrir conversa</TextMenu>
-                      </OpcaoMenu>
-                      <OpcaoMenu onClick={fecharMenu}>
-                        <ArrowUUpLeft size={16} />
-                        <TextMenu>Atendimentos anteriores</TextMenu>
-                      </OpcaoMenu>
-                      <OpcaoMenu onClick={fecharMenu}>
-                        <FilePlus size={16} />
-                        <TextMenu>Anexar arquivos</TextMenu>
-                      </OpcaoMenu>
-                      <OpcaoMenu onClick={fecharMenu}>
-                        <Folder size={16} />
-                        <TextMenu>Visualizar arquivo</TextMenu>
-                      </OpcaoMenu>
-                    </MenuOpcoes>
-                  )}
-                </MenuSuspenso>
               </Celula>
             </Linha>
           );

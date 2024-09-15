@@ -20,15 +20,7 @@ function Home() {
       <HomeContainer>
         <Sidebar />
         <Body>
-          <CardContainer>
-            <DivSign>
-              <TextSign>Assinatura digital</TextSign>
-            </DivSign>
-          </CardContainer>
-
-          <GraficContainer>
-            <span>espaço</span>
-          </GraficContainer>
+          <CardContainer></CardContainer>
         </Body>
       </HomeContainer>
     </>

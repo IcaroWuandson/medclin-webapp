@@ -7,7 +7,7 @@ export const FormContainer = styled.div`
 `;
 
 export const TextInfo = styled.p`
-  color: ${colors.third};
+  color: ${colors.primary};
   font-size: 2rem;
   font-weight: 600;
   margin-top: 20px;
@@ -209,7 +209,7 @@ export const DivButtonsSave = styled.div`
 `;
 
 export const ButtonSave = styled.button`
-  background-color: ${colors.third};
+  background-color: ${colors.primary};
   margin-right: 40px;
   color: ${colors.white};
   border-radius: 5px;
